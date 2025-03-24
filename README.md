@@ -1,5 +1,3 @@
-da
-
 # 📝 Next.js Blog Project
 
 ## 🚀 Project Overview
@@ -89,8 +87,5 @@ To deploy the project on **Vercel**, follow these steps:
 Contributions are welcome! Fork the repo and submit a PR.
 
 
-## 📩 Contact
-
-For any questions, reach out at [your-email@example.com](mailto\:your-email@example.com).
 
 
