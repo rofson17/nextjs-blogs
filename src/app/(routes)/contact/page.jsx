@@ -10,20 +10,20 @@ const Contact = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors, isSubmitted },
+    formState: { errors, isSubmitted, isSubmitting },
   } = useForm();
 
-  const onSubmit =async (data) => {
-    try{
-        const response=await axios.post("/api/contact", data);
-        console.log(response.data);
-    }catch(err){
-        console.log(err.message);
+  const onSubmit = async (data) => {
+    try {
+      const response = await axios.post("/api/contact", data);
+      console.log(response.data);
+    } catch (err) {
+      console.log(err.message);
     }
   };
 
   return (
-    <div className="flex items-center justify-center min-h-[90vh] bg-gray-100 p-4">
+    <div className="flex items-center justify-center min-h-[89vh] bg-gray-100 p-4">
       <Card className="w-full max-w-lg">
         <CardHeader>
           <CardTitle>Contact Us</CardTitle>
@@ -39,7 +39,7 @@ const Contact = () => {
                   placeholder="Your Name"
                   {...register("name", { required: "Name is required" })}
                 />
-             
+
               </div>
               <div>
                 <Input
@@ -47,16 +47,16 @@ const Contact = () => {
                   placeholder="Your Email"
                   {...register("email", { required: "Email is required", })}
                 />
-           
+
               </div>
               <div>
                 <Textarea
                   placeholder="Your Message"
                   {...register("message", { required: "Message is required" })}
                 />
-                
+
               </div>
-              <Button type="submit" className="w-full">Send Message</Button>
+              <Button type="submit" className="w-full" disable={isSubmitting}>Send Message</Button>
             </form>
           )}
         </CardContent>

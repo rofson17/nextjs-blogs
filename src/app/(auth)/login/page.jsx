@@ -12,7 +12,7 @@ import { GiNinjaHead } from "react-icons/gi";
 
 const SignIn = () => {
 
- const {
+    const {
         register,
         handleSubmit,
         watch,
@@ -22,7 +22,7 @@ const SignIn = () => {
         } } = useForm();
 
 
-   const onSubmit = async (data) => {
+    const onSubmit = async (data) => {
         try {
             const response = await axios.post('/api/user/login', data);
             console.log(response.data);
@@ -35,52 +35,52 @@ const SignIn = () => {
     return (
         <div className="h-screen flex justify-center items-center">
             <form className="mx-4 w-full md:w-1/4" onSubmit={handleSubmit(onSubmit)}>
-            <div className="flex justify-center items-center flex-col text-2xl md:text-3xl mb-5">
-                <div className="bg-slate-900 rounded-full p-4 text-white">
-                    <GiNinjaHead/>
+                <div className="flex justify-center items-center flex-col text-2xl md:text-3xl mb-5">
+                    <div className="bg-slate-900 rounded-full p-4 text-white">
+                        <GiNinjaHead />
+                    </div>
+                    <h2 className="text-blue-600">Login</h2>
                 </div>
-                <h2 className="text-blue-600">Login</h2>
-            </div>
 
-            <div>
-                <div className="mb-3">
-                    <Input 
-                        placeholder="Email"
-                        {...register("email")}
+                <div>
+                    <div className="mb-3">
+                        <Input
+                            placeholder="Email"
+                            {...register("email")}
                         />
-                </div>
+                    </div>
 
-                <div className="mb-3">
-                    <Input 
-                        placeholder="Password"
-                        type="password"
-                        {...register("password")}
+                    <div className="mb-3">
+                        <Input
+                            placeholder="Password"
+                            type="password"
+                            {...register("password")}
                         />
-                </div>
+                    </div>
 
-                <Button 
-                    submit 
-                    disable={isSubmitting}
-                    className="w-full"
+                    <Button
+                        submit
+                        disable={isSubmitting}
+                        className="w-full"
                     >
-                    {isSubmitting ? "login..." : "Login"}
+                        {isSubmitting ? "login..." : "Login"}
                     </Button>
 
 
-            </div>
+                </div>
 
-            <div className="mt-4">
+                <div className="mt-4">
                     <p className="text-xs text-gray-500 text-right">Don't have an account?
                         <Link className="text-blue-500" href="/register">register</Link>
                     </p>
-            </div>
+                </div>
             </form>
-             <Toaster
+            <Toaster
                 position="top-right"
                 reverseOrder={false}
             />
 
-        </div>  
+        </div>
     )
 }
 

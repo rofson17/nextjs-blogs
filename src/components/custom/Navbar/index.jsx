@@ -3,15 +3,10 @@ import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
-
-import { cn } from "@/lib/utils";
 import NavLink from "./NavLink";
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
-
-
-
 
 
     return (
@@ -34,7 +29,7 @@ const Navbar = () => {
                         <NavLink label="About" href="/about" />
                         <NavLink label="Contact" href="/contact" />
 
-                        <Link href="/dashboard" className="px-4 py-2 md:hover:bg-transparent hover:text-blue-600 w-full text-center md:w-auto">Dashboard</Link>
+                        <Link href="/dashboard/users" className="px-4 py-2 md:hover:bg-transparent hover:text-blue-600 w-full text-center md:w-auto">Dashboard</Link>
                         <Link href="/profile/rofson" className="px-4 py-2 md:hover:bg-transparent hover:text-blue-600 w-full text-center md:w-auto flex justify-center md:justify-start">
                             <Image src="/profile.jpg" alt="" height={35} width={35} className="bg-cover rounded-full border-2 border-blue-600" />
                         </Link>

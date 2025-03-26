@@ -1,4 +1,3 @@
-import "../globals.css"
 
 export const metadata = {
     title: "Nextjs Blogs -Dashboard",
@@ -7,10 +6,8 @@ export const metadata = {
 
 export default function DashboardLayout({ children }) {
     return (
-        <html lang="en">
-            <body>
-                {children}
-            </body>
-        </html>
+        <div>
+            {children}
+        </div>
     );
 }
