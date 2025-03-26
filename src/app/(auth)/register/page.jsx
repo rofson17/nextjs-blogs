@@ -30,8 +30,8 @@ const Regiser = () => {
             const response = await axios.post('/api/user/register', data);
             console.log(response.data);
 
-        } catch (error) {
-            console.log(error.message);
+        } catch (err) {
+            console.log(err.message);
         }
 
 
